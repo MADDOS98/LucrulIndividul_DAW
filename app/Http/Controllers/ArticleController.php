@@ -10,12 +10,12 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::latest()->paginate(5);
-        return view('articles.index', compact('articles'));
+        return view('index', compact('articles'));
     }
 
     public function create()
     {
-        return view('articles.create');
+        return view('create');
     }
 
     public function store(Request $request)
@@ -33,7 +33,7 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
-        return view('articles.edit', compact('article'));
+        return view('edit', compact('article'));
     }
 
     public function update(Request $request, Article $article)
